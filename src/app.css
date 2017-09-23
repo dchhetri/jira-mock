@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    font-size: 62.5%;
+}
+
+input {
+    outline: none;
+}
+
+
+.full-height {
+    height: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.full-size {
+    height: 100%;
+    width: 100%;
+}
+
+.content-spacing {
+    padding: 0 2em;
+    margin: 0 auto;
+    max-width: 1480px;
+}
+
+#app {
+    background: black;
+    font-size: 1.4rem;
+}

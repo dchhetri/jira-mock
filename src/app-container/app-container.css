@@ -1,0 +1,13 @@
+.app-container {
+    display: flex;
+}
+
+.side-panel {
+    width: 220px;
+    background-color: rgba(0,0,0,.5);
+}
+
+.content-panel {
+    flex-basis: 100%;
+    background-image: linear-gradient(rgb(18, 18, 18), rgb(7, 7, 7) 85%);
+}

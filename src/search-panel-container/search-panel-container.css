@@ -1,0 +1,22 @@
+.search-panel .input-box {
+    position: relative;
+    background-color: #282828;
+    padding: 1.5em 0;
+}
+.search-panel .input-box .input-box-label {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: .5em;
+}
+
+.search-panel .input-box .input-box-input {
+    caret-color: #1db954;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.6;
+}
