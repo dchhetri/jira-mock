@@ -2,20 +2,55 @@
     <div class="input-box">
         <div class='content-spacing'>
             <div class="input-box-label-container">
-                <h4 class="no-margin-padding input-label">Start searching</h4>      
+                <h4 class="no-margin-padding input-label">Start searching</h4>
                 <div class="small-text dropdown-btn inline dropdown-btn-invisible">
-                    Smart Filter
+                    {{ $ctrl.filterItems[$ctrl.model.selectedFilter].content }}
                     <div class="dropdown-content">
-                        <div class="item">Description</div>
-                        <div class="item">Feature</div>
-                        <div class="item">Date</div>
-                        <div class="item">Priority</div>
-                        <div class="item">Submitted By</div>                        
-                        <div class="item">Status</div>
-                    </div>                
+                        <div class="item" ng-repeat="filterItem in $ctrl.filterItems" ng-click="$ctrl.model.selectedFilter = filterItem.id">{{filterItem.content}}</div>
+                    </div>
                 </div>
             </div>
-            <input type="text" class="input-box-input" value="" placeholder="Start typing...">
+            <input type="text" class="input-box-input" value="" placeholder="Start typing..." ng-model="$ctrl.model.inputQuery" ng-model-options="{ debounce: 200 }">
+        </div>
+    </div>
+
+    <div class="filter-options-section content-spacing">
+        <div class="filter-tags" ng-repeat="tags in $ctrl.filterTags">{{tags.content}}</div>
+    </div>
+
+    <div class="filter-content-section content-spacing">
+        <div class="bug-card" ng-repeat="bugs in $ctrl.bugList">
+            <h4>{{bugs.description}}</h4>
+            <div class="flex-row secondary-text">
+                <div class="flex-col-3">
+                    <div class="flex-row">
+                        <div class="flex-col-2">Feature:</div>
+                        <div class="flex-col-2 value">{{bugs.feature}}</div>
+                    </div>
+                    <div class="flex-row">
+                        <div class="flex-col-2">Status:</div>
+                        <div class="flex-col-2 value">{{bugs.status}}</div>
+                    </div>
+                    <div class="flex-row">
+                        <div class="flex-col-2">Priority:</div>
+                        <div class="flex-col-2 value">{{bugs.priority}}</div>
+                    </div>
+                </div>
+                <div class="flex-col-3">
+                    <div class="flex-row">
+                        <div class="flex-col-2">SubmittedBy:</div>
+                        <div class="flex-col-2 value">{{bugs.submittedBy}}</div>
+                    </div>
+                    <div class="flex-row">
+                        <div class="flex-col-2">Modified Date:</div>
+                        <div class="flex-col-2 value">{{bugs.modifiedDate | date : 'mediumDate'}}</div>
+                    </div>
+                    <div class="flex-row">
+                        <div class="flex-col-2">Submitted Date:</div>
+                        <div class="flex-col-2 value">{{bugs.submittedDate | date : 'mediumDate'}}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

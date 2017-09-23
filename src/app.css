@@ -31,8 +31,8 @@ input {
 
 .content-spacing {
     padding: 0 2em;
-    margin: 0 auto;
-    max-width: 1480px;
+    /* margin: 0 auto;
+    max-width: 1480px; */
 }
 
 .logo-image {
@@ -44,6 +44,10 @@ input {
 .no-margin-padding {
     margin: 0px;
     padding: 0px;
+}
+
+.secondary-text {
+    color: hsla(0,0%,100%,0.6);
 }
 
 .link-subtle {
@@ -83,12 +87,32 @@ input {
     font-size: 1.4rem;
 }
 
+/** flexing **/
+.flex-row {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-col-2 {
+    flex-basis: 50%;
+}
+
+.flex-col-3 {
+    flex-basis: 33%;
+}
+.flex-col-4 {
+    flex-basis: 25%;
+}
 
 /** Custom Dropdown styles **/
 .dropdown-btn {
     position: relative;
     cursor: pointer;
 }
+
 .dropdown-btn:hover .dropdown-content {
     display: block;
 }
@@ -101,6 +125,7 @@ input {
 .dropdown-btn .dropdown-content {
     display: none;
     position: absolute;
+    left: 0;
     min-width: 160px;
     z-index: 1;
     background-color: rgba(248, 248, 255, 0.9);

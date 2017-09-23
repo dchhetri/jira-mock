@@ -1,3 +1,8 @@
+.search-panel {
+    display: flex;
+    flex-direction: column;
+}
+
 .search-panel .input-box {
     position: relative;
     background-color: #282828;
@@ -15,7 +20,6 @@
 }
 
 .search-panel .input-box .input-box-input {
-    caret-color: #1db954;
     box-sizing: border-box;
     width: 100%;
     background-color: transparent;
@@ -24,4 +28,49 @@
     font-weight: 700;
     font-size: 3rem;
     line-height: 1.6;
+}
+
+.search-panel .filter-options-section {
+    background: rgba(40, 40, 40, 0.6);
+    padding: 0.3em 2em;
+}
+
+.search-panel .filter-options-section .filter-tags {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 0.4em;
+    min-width: 100px;
+    text-align: center;
+    margin-right: 3px;
+}
+
+.search-panel .filter-options-section .filter-tags:hover {
+    background-color: rgba(248, 248, 255, 0.9);
+    cursor: pointer;
+    color: black;
+}
+
+.search-panel .filter-content-section {
+    flex-grow: 1;
+    overflow: scroll;
+}
+
+.bug-card {
+    width: 100%;
+    border: 1px solid rgb(128,128,128);
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.bug-card h4 {
+    font-size: 2rem;
+}
+
+.bug-card .flex-row {
+    padding: 5px 0px;
+}
+
+.bug-card .flex-row .value {
+    color: white;
 }
