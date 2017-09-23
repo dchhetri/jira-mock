@@ -1,0 +1,33 @@
+.side-panel-container {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.side-panel-container .side-panel-logo {
+    height: 32px;
+    width: 32px;
+    margin-bottom: 10px;
+    border: 0px;
+}
+
+.side-panel-container .nav-group {
+    border-top: 1px solid hsla(0,0%,100%,.25);
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+.side-panel-container .nav-group .nav-item {
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 3px 0;
+}
+
+.side-panel-container .extra-spaced-nav-item .nav-item {
+    padding: 10px 0;
+}
+
+.side-panel-container .nav-group .active-nav-link {
+    color: white;
+    opacity: 1.0;
+}

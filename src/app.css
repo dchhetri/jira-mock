@@ -35,7 +35,83 @@ input {
     max-width: 1480px;
 }
 
+.logo-image {
+    background-image: url('../assets/logo.png');
+    width: 32px;
+    height: 32px;
+}
+
+.no-margin-padding {
+    margin: 0px;
+    padding: 0px;
+}
+
+.link-subtle {
+    opacity: 0.6;
+    transition: opacity .2s;
+}
+
+.link-subtle:hover {
+    opacity: 1.0;
+    cursor: pointer;
+}
+
+.icon-size {
+    width: 16px;
+    height: 16px;
+}
+
+.pull-right {
+    float: right;
+}
+
+.disabled {
+    pointer-events: none;
+    color: gray;
+}
+
+.small-text {
+    font-size: 1.0rem;
+}
+
+.inline {
+    display: inline;
+}
+
 #app {
     background: black;
     font-size: 1.4rem;
+}
+
+
+/** Custom Dropdown styles **/
+.dropdown-btn {
+    position: relative;
+    cursor: pointer;
+}
+.dropdown-btn:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-btn-invisible {}
+.dropdown-btn-invisible:hover {
+    text-decoration: underline;
+}
+
+.dropdown-btn .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+    background-color: rgba(248, 248, 255, 0.9);
+    color: black;
+    margin-top: -2px;
+}
+
+.dropdown-btn .dropdown-content .item {
+    padding: 10px;
+    font-weight: bold;
+}
+.dropdown-btn .dropdown-content .item:hover {
+    background: rgba(128, 128, 128, 0.6);
 }

@@ -3,10 +3,15 @@
     background-color: #282828;
     padding: 1.5em 0;
 }
-.search-panel .input-box .input-box-label {
+
+.search-panel .input-box .input-box-label-container {
     font-size: 1.4rem;
     letter-spacing: 1px;
     margin-bottom: .5em;
+}
+.search-panel .input-box .input-box-label-container .input-label {
+    display: inline-block;
+    padding-right: 10px;
 }
 
 .search-panel .input-box .input-box-input {
