@@ -25,7 +25,9 @@
 
     <div
         class="filter-options-section content-spacing" 
-        ng-class="{'show-filter-options-section filter-options-section-slide-down': !$ctrl.model.enableSmartFiltering, 'filter-options-section-slide-up': $ctrl.model.enableSmartFiltering}">
+        ng-class="{ 'show-filter-options-section ': !$ctrl.model.enableSmartFiltering, 
+                    '': $ctrl.model.enableSmartFiltering}"
+        >
         <search-filter-options-container model="$ctrl.model.filterOptionsSelected"></search-filter-options-container>
 
         <div style="display: none" 
