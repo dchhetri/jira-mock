@@ -1,18 +1,34 @@
 (function() {
     const filterConstants = {
         bugStatus: {
-            complete: { id: 'COMPLETE', content: 'Complete' },
-            inProgress: { id: 'IN_PROGRESS', content: 'In Progress' },
-            notStarted: { id: 'NOT_STARTED', content: 'Not Started' }
+            complete: { id: 'COMPLETE', content: 'COMPLETE' },
+            inProgress: { id: 'IN_PROGRESS', content: 'IN_PROGRESS' },
+            notStarted: { id: 'NOT_STARTED', content: 'NOT_STARTED' }
         },
+        
         filterTags: {
-            description: { id: 0, content: 'Description' },
-            feature: { id: 1, content: 'Feature' },
-            modifiedDate: { id: 2, content: 'Modified Date' },
-            submittedDate: { id: 3, content: 'Submitted Date' },
-            priority: { id: 4, content: 'Priority' },
-            submittedBy: { id: 5, content: 'Submitted By' },
-            status: { id: 6, content: 'Status' },
+            description: { id: 'description', content: 'Description' },
+            feature: { id: 'feature', content: 'Feature' },
+            modifiedDate: { id: 'modifiedDate', content: 'Modified Date' },
+            submittedDate: { id: 'submittedDate', content: 'Submitted Date' },
+            priority: { id: 'priority', content: 'Priority' },
+            submittedBy: { id: 'submittedBy', content: 'Submitted By' },
+            status: { id: 'status', content: 'Status' },
+        },
+
+        priorities: _.range(1, 4),
+
+        dateFilterCompareOptions: { 
+            lessThan: { id: '0', content: 'Less Than' },
+            lessThanOrEqualTo: { id: '1', content: 'Less Than or Equal To' },
+            equalTo: { id: '2', content: 'Equal To' },
+            greaterThan: { id: '3', content: 'Greater Than' },
+            greaterThanOrEqualTo: { id: '5', content: 'Greater Than or Equal To' },
+        },
+
+        any: { 
+            content: 'Any', 
+            id: "Any"
         },
 
         toDisplay: (obj) => {

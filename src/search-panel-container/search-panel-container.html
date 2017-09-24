@@ -18,7 +18,7 @@
     </div>
 
     <div class="filter-content-section content-spacing">
-        <div class="bug-card" ng-repeat="bugs in $ctrl.bugList">
+        <div class="bug-card" ng-repeat="bugs in $ctrl.bugList | filter: {description: $ctrl.model.inputQuery} | tag: $ctrl.model.filterOptionsSelected">
             <h4>{{bugs.description}}</h4>
             <div class="flex-row secondary-text">
                 <div class="flex-col-3">

@@ -1,6 +1,6 @@
 [
-  { "content": "Sal  Governale", "id": 0},
-  { "content": "Christie  Christy", "id": 1},
-  { "content": "Jason  Kaplan", "id": 2},
-  { "content": "Allison  Norris", "id": 3}
+  { "content": "Sal  Governale", "id": "Sal  Governale"},
+  { "content": "Christie  Christy", "id": "Christie  Christy"},
+  { "content": "Jason  Kaplan", "id": "Jason  Kaplan"},
+  { "content": "Allison  Norris", "id": "Allison  Norris"}
 ]

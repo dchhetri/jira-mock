@@ -1,6 +1,6 @@
 [
-    { "content": "User  Settings", "id": 0},
-    { "content": "Search", "id": 1},
-    { "content": "Notes", "id": 2},
-    { "content": "Gallery", "id": 3}
+    { "content": "User  Settings", "id": "User  Settings"},
+    { "content": "Search", "id": "Search"},
+    { "content": "Notes", "id": "Notes"},
+    { "content": "Gallery", "id": "Gallery"}
 ]

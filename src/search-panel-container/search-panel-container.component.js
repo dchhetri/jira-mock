@@ -1,10 +1,18 @@
 (function() {
-    function SearchPanelContainerComponentController($scope, $timeout, bugOperations) {
-        var $ctrl = this;
+    function SearchPanelContainerComponentController($scope, $timeout, bugOperations, filterConstants) {
+        const $ctrl = this;
+        const any = filterConstants.any;
 
         $ctrl.model = {
             enableSmartFiltering: true,
-            selectedFilterTags: []
+            filterOptionsSelected: {
+                feature: _.clone(any),
+                modifiedDate: { id: filterConstants.dateFilterCompareOptions.equalTo.id },
+                submittedDate: { id: filterConstants.dateFilterCompareOptions.equalTo.id },
+                priority: _.clone(any),
+                submittedBy: _.clone(any),
+                status: _.clone(any),
+            }
         }
 
         $ctrl.bugList = [];

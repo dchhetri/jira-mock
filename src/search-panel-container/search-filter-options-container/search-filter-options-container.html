@@ -2,26 +2,38 @@
     <div class="filter-item-row-container" ng-repeat="filterItem in $ctrl.filterModels">
         <div class="flex-row">
             <div class="flex-col-4">{{filterItem.content}}</div>
-            <div class="flex-col-4"> 
+            <div class="flex-col"> 
                 <div ng-switch="filterItem.type">
                     <div ng-switch-when="checkbox">
                         <input type="checkbox" />
                     </div>
+                    <!-- TEXT Dropdown -->
                     <div ng-switch-when="text-select">
-                        <select class="full-width">
-                            <option value="option.id" ng-repeat="option in filterItem.data">{{option.content}}</option>
+                        <select ng-model="$ctrl.model[filterItem.field].content" >
+                            <option value="{{filterOption.content}}" 
+                                    ng-repeat="filterOption in filterItem.data">{{filterOption.content}}</option>
                         </select>
                     </div>
-                    <div ng-switch-when="date">
-                        <datepicker class="full-width" date-format="mediumDate">
-                            <input datepicker class="full-width" ng-model="date" type="text"/>
+                    <!-- Date picker -->
+                    <div ng-switch-when="date" class="flex-row">
+                        <select class="date-select" ng-model="$ctrl.model[filterItem.field].id">
+                            <option ng-repeat="dateOption in $ctrl.dateFilterCompareOptions" value="{{dateOption.id}}">{{dateOption.content}}</option>
+                        </select>
+                        <datepicker date-format="mediumDate" >
+                            <input datepicker ng-model="$ctrl.model[filterItem.field].content" type="text"/>
                         </datepicker>
                     </div>
+                    <!-- Number selector -->
                     <div ng-switch-when="number-select">
-                        <input class="full-width" type="number" min="{{filterItem.min}}" />
+                        <select ng-model="$ctrl.model[filterItem.field].content">
+                            <option value="{{value}}" ng-repeat="value in filterItem.data">{{value}}</option>
+                        </select>
                     </div>
                 </div>
             </div>
         </div>
     </div> 
+    <!-- <div class="flex-row">
+        <button>Clear All</button>
+    </div> -->
 </div>

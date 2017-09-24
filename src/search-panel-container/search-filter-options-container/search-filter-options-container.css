@@ -1,7 +1,24 @@
 .search-filter-options-container ._720kb-datepicker-calendar._720kb-datepicker-open {
-    right: 0;
     top: 23px;
+    max-width: 300px;
 }
+
 .search-filter-options-container .filter-item-row-container {
     padding-top: 10px;
 }
+
+.search-filter-options-container select, .search-filter-options-container input:not([type="checkbox"]){
+    width: 100px;
+    margin-right: 20px;
+}
+.search-filter-options-container input[type="checkbox"] {
+    margin: 0px;
+}
+
+/* .search-filter-options-container select.date-select {
+    float: left;
+}
+
+.search-filter-options-container datepicker {
+    width: auto;
+} */
