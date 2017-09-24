@@ -1,21 +1,50 @@
 <div class="full-size search-panel">
     <div class="input-box">
-        <div class='content-spacing'>
-            <div class="input-box-label-container">
-                <h4 class="no-margin-padding input-label">Start searching</h4>
-                <div class="small-text dropdown-btn inline dropdown-btn-invisible">
-                    {{ $ctrl.filterItems[$ctrl.model.selectedFilter].content }}
-                    <div class="dropdown-content">
-                        <div class="item" ng-repeat="filterItem in $ctrl.filterItems" ng-click="$ctrl.model.selectedFilter = filterItem.id">{{filterItem.content}}</div>
+        <div class='content-spacing flex-row'>
+            <div class="flex-col">
+                <div class="input-box-label-container">
+                    <h4 class="no-margin-padding input-label">Start searching</h4>
+                    <div class="small-text inline clickable" ng-class="{'strike-through': !$ctrl.model.enableSmartFiltering}" ng-click="$ctrl.disableSmartFiltering()">
+                        <i>Applying Smart Filter </i>
                     </div>
                 </div>
+                <input type="text" class="input-box-input" value="" placeholder="Start typing..." ng-model="$ctrl.model.inputQuery" ng-model-options="{ debounce: 200 }">
             </div>
-            <input type="text" class="input-box-input" value="" placeholder="Start typing..." ng-model="$ctrl.model.inputQuery" ng-model-options="{ debounce: 200 }">
+            <!-- <div style="width: 400px;">
+                <search-filter-options-container model="$ctrl.model.filterOptionsSelected"></search-filter-options-container>
+                 
+                <div ng-repeat="tag in $ctrl.filterTagConstants">
+                    <span>{{tag.content}}</span>
+                    <span> <input type="text" placeholder="Enter..." style="width: 100px;"/> </span>
+                </div> 
+
+
+            </div> -->
         </div>
     </div>
 
-    <div class="filter-options-section content-spacing">
-        <div class="filter-tags" ng-repeat="tags in $ctrl.filterTags">{{tags.content}}</div>
+    <div
+        class="filter-options-section content-spacing" 
+        ng-class="{'show-filter-options-section filter-options-section-slide-down': !$ctrl.model.enableSmartFiltering, 'filter-options-section-slide-up': $ctrl.model.enableSmartFiltering}">
+        <search-filter-options-container model="$ctrl.model.filterOptionsSelected"></search-filter-options-container>
+
+        <div style="display: none" 
+            class="filter-tags" 
+            ng-repeat="tag in $ctrl.filterTagConstants"
+            ng-class="{'selected-tag': $ctrl.isTagSelected(tag.id)}"
+            ng-click="$ctrl.toggleTagSelection(tag.id)"
+        >
+        <div ng-if="!$ctrl.hasFilterOptions(tag.id)"> {{tag.content}} </div>
+        <div ng-if="$ctrl.hasFilterOptions(tag.id)">
+            <div class="small-text dropdown-btn inline dropdown-btn-invisible">
+                {{tag.content}}
+                <div class="dropdown-content">
+                    <div class="item" ng-repeat="filterOptions in $ctrl.getFilterOptions(tag.id)" >{{filterOptions.content}}</div>
+                </div>
+            </div>
+        </div>
+
+        </div>
     </div>
 
     <div class="filter-content-section content-spacing">

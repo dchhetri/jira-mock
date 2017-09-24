@@ -1,0 +1,27 @@
+<div class="full-width search-filter-options-container">
+    <div ng-repeat="filterItem in $ctrl.filterModels">
+        <div class="flex-row">
+            <div class="flex-col-2">{{filterItem.content}}</div>
+            <div class="flex-col-2"> 
+                <div ng-switch="filterItem.type">
+                    <div ng-switch-when="checkbox">
+                        <input type="checkbox" />
+                    </div>
+                    <div ng-switch-when="text-select">
+                        <select class="full-width">
+                            <option value="option.id" ng-repeat="option in filterItem.data">{{option.content}}</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="date">
+                        <datepicker class="full-width" date-format="mediumDate">
+                            <input datepicker class="full-width" ng-model="date" type="text"/>
+                        </datepicker>
+                    </div>
+                    <div ng-switch-when="number-select">
+                        <input class="full-width" type="number" min="{{filterItem.min}}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

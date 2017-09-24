@@ -82,6 +82,14 @@ input {
     display: inline;
 }
 
+.strike-through {
+    text-decoration: line-through;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
 #app {
     background: black;
     font-size: 1.4rem;
@@ -96,6 +104,10 @@ input {
     justify-content: center;
 }
 
+.flex-col {
+    flex: 1;
+}
+
 .flex-col-2 {
     flex-basis: 50%;
 }
@@ -103,7 +115,12 @@ input {
 .flex-col-3 {
     flex-basis: 33%;
 }
+
 .flex-col-4 {
+    flex-basis: 25%;
+}
+
+.flex-col-6 {
     flex-basis: 25%;
 }
 
@@ -137,6 +154,7 @@ input {
     padding: 10px;
     font-weight: bold;
 }
+
 .dropdown-btn .dropdown-content .item:hover {
     background: rgba(128, 128, 128, 0.6);
 }

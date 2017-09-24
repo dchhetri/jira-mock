@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="./src/app-container/app-container.css">
         <link rel="stylesheet" href="./src/search-panel-container/search-panel-container.css">
         <link rel="stylesheet" href="./src/side-panel-container/side-panel-container.css">
+        <link rel="stylesheet" href="./src/search-panel-container/search-filter-options-container/search-filter-options-container.css" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.23/angular-datepicker.css" />
     </head>
     <body>
         <div ng-app="splat" id="app" class="full-size">
@@ -18,11 +20,19 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.23/angular-datepicker.js"></script>
+        
         <script src="./src/app.js"></script>
         <script src="./src/services/bugs-operations.js"></script>
-        
+
         <script src="./src/app-container/app-container.component.js"></script>
+
+        <script src="./src/search-panel-container/search-filter/tag-filter.js"></script>   
+        <script src="./src/search-panel-container/constants/filter.constants.js"></script>     
+        
         <script src="./src/search-panel-container/search-panel-container.component.js"></script>
         <script src="./src/side-panel-container/side-panel-container.component.js"></script>
+
+        <script src="./src/search-panel-container/search-filter-options-container/search-filter-options-container.component.js"></script>
     </body>
 </html>

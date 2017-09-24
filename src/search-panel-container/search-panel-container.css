@@ -32,7 +32,14 @@
 
 .search-panel .filter-options-section {
     background: rgba(40, 40, 40, 0.6);
-    padding: 0.3em 2em;
+    opacity: 0;
+    padding: 0.3em 2em;        
+    max-height: 0;    
+}
+
+.search-panel .show-filter-options-section {
+    max-height: 500px;
+    opacity: 1; 
 }
 
 .search-panel .filter-options-section .filter-tags {
@@ -43,6 +50,10 @@
     min-width: 100px;
     text-align: center;
     margin-right: 3px;
+}
+
+.search-panel .filter-options-section .filter-tags.selected-tag {
+    background: rgba(128, 128, 128, 0.9);
 }
 
 .search-panel .filter-options-section .filter-tags:hover {
@@ -65,6 +76,8 @@
 
 .bug-card h4 {
     font-size: 2rem;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
 }
 
 .bug-card .flex-row {
@@ -73,4 +86,38 @@
 
 .bug-card .flex-row .value {
     color: white;
+}
+
+/** anims **/
+.filter-options-section-slide-down {
+    animation-name: filter-options-section-slide-down, show;
+    animation-duration: 1.5s, 0.75s;
+}
+
+.filter-options-section-slide-up {
+    animation-name: filter-options-section-slide-up, show;
+    animation-duration: 1.0s, 0.5s;
+}
+
+@keyframes show {
+    0% { opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes filter-options-section-slide-down {
+    0% {
+        max-height: 0;
+    }
+    100% {
+        max-height: 500px;
+    }
+}
+@keyframes filter-options-section-slide-up {
+    0% {
+        max-height: 200px;
+    }
+
+    100% {
+        max-height: 0;
+    }
 }

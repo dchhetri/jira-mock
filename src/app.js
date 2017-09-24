@@ -1,3 +1,5 @@
 (function() {
-    const app = angular.module('splat', []); 
+    const app = angular.module('splat', [
+        '720kb.datepicker'
+    ]); 
 })();
