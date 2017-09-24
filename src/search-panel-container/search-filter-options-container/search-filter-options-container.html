@@ -1,8 +1,8 @@
 <div class="full-width search-filter-options-container">
-    <div ng-repeat="filterItem in $ctrl.filterModels">
+    <div class="filter-item-row-container" ng-repeat="filterItem in $ctrl.filterModels">
         <div class="flex-row">
-            <div class="flex-col-2">{{filterItem.content}}</div>
-            <div class="flex-col-2"> 
+            <div class="flex-col-4">{{filterItem.content}}</div>
+            <div class="flex-col-4"> 
                 <div ng-switch="filterItem.type">
                     <div ng-switch-when="checkbox">
                         <input type="checkbox" />

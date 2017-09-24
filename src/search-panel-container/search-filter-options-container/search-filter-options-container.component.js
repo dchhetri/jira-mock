@@ -14,8 +14,6 @@
             _.extend( _.clone(filterTags.status), { type: 'text-select', data: [any].concat(filterConstants.toDisplay(filterConstants.bugStatus)) }),
         ];
 
-        console.log($ctrl.filterModels);
-
         bugOperations.getAllUsers().then( (users) => {
             _.find($ctrl.filterModels, { id: 5 }).data = [any].concat(users);
         });

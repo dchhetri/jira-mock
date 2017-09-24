@@ -124,6 +124,10 @@ input {
     flex-basis: 25%;
 }
 
+.show-overflow {
+    overflow: visible !important;
+}
+
 /** Custom Dropdown styles **/
 .dropdown-btn {
     position: relative;

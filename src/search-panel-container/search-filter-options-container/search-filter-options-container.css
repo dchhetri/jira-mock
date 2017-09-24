@@ -2,3 +2,6 @@
     right: 0;
     top: 23px;
 }
+.search-filter-options-container .filter-item-row-container {
+    padding-top: 10px;
+}

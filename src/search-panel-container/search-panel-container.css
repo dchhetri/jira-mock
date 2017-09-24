@@ -32,14 +32,14 @@
 
 .search-panel .filter-options-section {
     background: rgba(40, 40, 40, 0.6);
-    overflow: hidden;
     transition: max-height 0.6s ease-in;
     max-height: 0px;
-    flex-basis: 700px;
+    flex-basis: 300%;
+    overflow: hidden;
 }
 
 .search-panel .show-filter-options-section {
-    max-height: 150px;
+    max-height: 250px;
 }
 
 .search-panel .filter-options-section .filter-tags {

@@ -10,43 +10,11 @@
                 </div>
                 <input type="text" class="input-box-input" value="" placeholder="Start typing..." ng-model="$ctrl.model.inputQuery" ng-model-options="{ debounce: 200 }">
             </div>
-            <!-- <div style="width: 400px;">
-                <search-filter-options-container model="$ctrl.model.filterOptionsSelected"></search-filter-options-container>
-                 
-                <div ng-repeat="tag in $ctrl.filterTagConstants">
-                    <span>{{tag.content}}</span>
-                    <span> <input type="text" placeholder="Enter..." style="width: 100px;"/> </span>
-                </div> 
-
-
-            </div> -->
         </div>
     </div>
 
-    <div
-        class="filter-options-section content-spacing" 
-        ng-class="{ 'show-filter-options-section ': !$ctrl.model.enableSmartFiltering, 
-                    '': $ctrl.model.enableSmartFiltering}"
-        >
+    <div id='filter-options' class="filter-options-section content-spacing" ng-class="{ 'show-filter-options-section': !$ctrl.model.enableSmartFiltering}">
         <search-filter-options-container model="$ctrl.model.filterOptionsSelected"></search-filter-options-container>
-
-        <div style="display: none" 
-            class="filter-tags" 
-            ng-repeat="tag in $ctrl.filterTagConstants"
-            ng-class="{'selected-tag': $ctrl.isTagSelected(tag.id)}"
-            ng-click="$ctrl.toggleTagSelection(tag.id)"
-        >
-        <div ng-if="!$ctrl.hasFilterOptions(tag.id)"> {{tag.content}} </div>
-        <div ng-if="$ctrl.hasFilterOptions(tag.id)">
-            <div class="small-text dropdown-btn inline dropdown-btn-invisible">
-                {{tag.content}}
-                <div class="dropdown-content">
-                    <div class="item" ng-repeat="filterOptions in $ctrl.getFilterOptions(tag.id)" >{{filterOptions.content}}</div>
-                </div>
-            </div>
-        </div>
-
-        </div>
     </div>
 
     <div class="filter-content-section content-spacing">
