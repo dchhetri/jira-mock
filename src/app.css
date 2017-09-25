@@ -187,6 +187,10 @@ input {
     transition: color 0.5s;
 }
 
+.color-transitioner {
+    transition: color 0.5s;
+}
+
 .ui-updated-indicator {
-    color: green;
+    color: #26A6CD;
 }

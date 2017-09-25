@@ -24,7 +24,7 @@
 
     <div class="filter-content-section content-spacing">
         <div class="bug-card" ng-repeat="bugs in $ctrl.bugList | filter: {description: $ctrl.model.inputQuery} | tag: $ctrl.model.filterOptionsSelected">
-            <h4 contenteditable content-editable-model-updater ng-model="bugs.description" >{{bugs.description}}</h4>
+            <h4 contenteditable content-editable-model-updater ng-model="bugs.description" ng-model-ui-indicator class="color-transitioner">{{bugs.description}}</h4>
             <div class="flex-row secondary-text">
                 <div class="flex-col-3">
                     <div class="flex-row">
