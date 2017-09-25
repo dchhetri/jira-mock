@@ -16,6 +16,9 @@
 
         $ctrl.toggleAdvanceFiltering = () => {
             $ctrl.model.enableAdvanceFiltering = !$ctrl.model.enableAdvanceFiltering;
+            if(!$ctrl.model.enableAdvanceFiltering) {
+                resetManualAnimationState();
+            }
         }
 
         $ctrl.onRemovePillItem = (item) => {
@@ -42,26 +45,29 @@
             };
         }
 
+        //change model to start animation
+        $timeout(()=> $ctrl.model.enableAdvanceFiltering = false, 200);
+
+        
         //Some animation issues issues due to immaturity, handle manually for now
         const $element = $(document.getElementById('filter-options'));
-
-        $timeout(()=> $ctrl.model.enableAdvanceFiltering = false, 200);
+        let visibility = true;        
         
-        $element.on('transitionend', (event) => {
-            if (!$ctrl.model.enableAdvanceFiltering) {
-                $element.addClass('show-overflow')                
-            }
-        });
+        function resetManualAnimationState() {
+            $element.toggle(true);
+        }
 
-        $scope.$watch('$ctrl.model.enableAdvanceFiltering', () => {
-            if ($ctrl.model.enableAdvanceFiltering) {
-                $element.removeClass('show-overflow')          
+        $element.on('transitionend', (event) => {
+            if (event.originalEvent.propertyName !== 'opacity') {
+                $element.toggle(visibility);
+                visibility = !visibility;
             }
         });
 
         $scope.$watch('$ctrl.model.filterOptionsSelected', () => {
             $ctrl.model.filterPillModels = advanceFilterOptionsModelTransformer.transform($ctrl.model.filterOptionsSelected);
         }, true);
+        
 
         $scope.$on('$destroy', () => element.off());
     }
