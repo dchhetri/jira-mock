@@ -85,6 +85,9 @@ input {
 .strike-through {
     text-decoration: line-through;
 }
+.underline:hover {
+    text-decoration: underline;
+}
 
 .clickable {
     cursor: pointer;
@@ -95,6 +98,10 @@ input {
     font-size: 1.4rem;
 }
 
+.capitalize {
+    text-transform: capitalize;
+ }
+ 
 /** flexing **/
 .flex-row {
     display: flex;
@@ -162,3 +169,4 @@ input {
 .dropdown-btn .dropdown-content .item:hover {
     background: rgba(128, 128, 128, 0.6);
 }
+

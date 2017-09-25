@@ -4,16 +4,21 @@
             <div class="flex-col">
                 <div class="input-box-label-container">
                     <h4 class="no-margin-padding input-label">Start searching</h4>
-                    <div class="small-text inline clickable" ng-class="{'strike-through': !$ctrl.model.enableSmartFiltering}" ng-click="$ctrl.disableSmartFiltering()">
-                        <i>Applying Smart Filter </i>
+                    <div class="small-text inline clickable underline"  ng-click="$ctrl.toggleAdvanceFiltering()">
+                        <i>{{$ctrl.model.enableAdvanceFiltering ? 'Show Filter  Options' : 'Hide Filter Options'}}</i>
                     </div>
                 </div>
                 <input type="text" class="input-box-input" value="" placeholder="Start typing..." ng-model="$ctrl.model.inputQuery" ng-model-options="{ debounce: 200 }">
+                <filter-tag-pill ng-repeat="pillItem in $ctrl.model.filterPillModels"
+                                 model="pillItem"
+                                 on-remove="$ctrl.onRemovePillItem(pillItem)"
+                >
+                </filter-tag-pill>
             </div>
         </div>
     </div>
 
-    <div id='filter-options' class="filter-options-section content-spacing" ng-class="{ 'show-filter-options-section': !$ctrl.model.enableSmartFiltering}">
+    <div id='filter-options' class="filter-options-section content-spacing" ng-class="{ 'show-filter-options-section': !$ctrl.model.enableAdvanceFiltering}">
         <search-filter-options-container model="$ctrl.model.filterOptionsSelected"></search-filter-options-container>
     </div>
 
