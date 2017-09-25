@@ -5,14 +5,7 @@
 
         $ctrl.model = {
             enableAdvanceFiltering: true,
-            filterOptionsSelected: {
-                feature: _.clone(any),
-                modifiedDate: { id: filterConstants.dateFilterCompareOptions.equalTo.id },
-                submittedDate: { id: filterConstants.dateFilterCompareOptions.equalTo.id },
-                priority: _.clone(any),
-                submittedBy: _.clone(any),
-                status: _.clone(any),
-            }
+            filterOptionsSelected: getDefaultFilterOptionsSelectedModel(),
         }
 
         $ctrl.bugList = [];
@@ -34,6 +27,21 @@
                 $ctrl.model.filterOptionsSelected[key] = _.clone(any);
             }
         };
+
+        $ctrl.clearAllFilterOptionSelection = () => {
+           $ctrl.model.filterOptionsSelected = getDefaultFilterOptionsSelectedModel();
+        };
+
+        function getDefaultFilterOptionsSelectedModel() {
+            return {
+                feature: _.clone(any),
+                modifiedDate: { id: filterConstants.dateFilterCompareOptions.equalTo.id },
+                submittedDate: { id: filterConstants.dateFilterCompareOptions.equalTo.id },
+                priority: _.clone(any),
+                submittedBy: _.clone(any),
+                status: _.clone(any),
+            };
+        }
 
         //Some animation issues issues due to immaturity, handle manually for now
         const $element = $(document.getElementById('filter-options'));

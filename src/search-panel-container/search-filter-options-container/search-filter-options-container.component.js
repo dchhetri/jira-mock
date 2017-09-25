@@ -30,7 +30,8 @@
         templateUrl: './src/search-panel-container/search-filter-options-container/search-filter-options-container.html',
         controller: SearchFilterOptionsContainerController,
         bindings: {
-            model: '=?'
+            model: '=?',
+            onClearAll: '&?',
         }
     });
 })();

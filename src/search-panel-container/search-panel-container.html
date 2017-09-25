@@ -19,12 +19,12 @@
     </div>
 
     <div id='filter-options' class="filter-options-section content-spacing" ng-class="{ 'show-filter-options-section': !$ctrl.model.enableAdvanceFiltering}">
-        <search-filter-options-container model="$ctrl.model.filterOptionsSelected"></search-filter-options-container>
+        <search-filter-options-container model="$ctrl.model.filterOptionsSelected" on-clear-all="$ctrl.clearAllFilterOptionSelection()"></search-filter-options-container>
     </div>
 
     <div class="filter-content-section content-spacing">
         <div class="bug-card" ng-repeat="bugs in $ctrl.bugList | filter: {description: $ctrl.model.inputQuery} | tag: $ctrl.model.filterOptionsSelected">
-            <h4>{{bugs.description}}</h4>
+            <h4 contenteditable content-editable-model-updater ng-model="bugs.description" >{{bugs.description}}</h4>
             <div class="flex-row secondary-text">
                 <div class="flex-col-3">
                     <div class="flex-row">
@@ -33,11 +33,19 @@
                     </div>
                     <div class="flex-row">
                         <div class="flex-col-2">Status:</div>
-                        <div class="flex-col-2 value">{{bugs.status}}</div>
+                        <select class="custom-select" ng-model="bugs.status" ng-model-ui-indicator>
+                            <option ng-value="'COMPLETE'" >COMPLETE</option>
+                            <option ng-value="'IN_PROGRESS'" >IN_PROGRESS</option>
+                            <option ng-value="'NOT_STARTED'" >NOT_STARTED</option>
+                        </select>
                     </div>
                     <div class="flex-row">
                         <div class="flex-col-2">Priority:</div>
-                        <div class="flex-col-2 value">{{bugs.priority}}</div>
+                        <select class="custom-select" ng-model="bugs.priority" ng-model-ui-indicator>
+                            <option ng-value="1" >1</option>
+                            <option ng-value="2" >2</option>
+                            <option ng-value="3" >3</option>
+                        </select>
                     </div>
                 </div>
                 <div class="flex-col-3">

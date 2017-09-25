@@ -170,3 +170,23 @@ input {
     background: rgba(128, 128, 128, 0.6);
 }
 
+
+/** custom invisible select style **/
+.custom-select {
+    -webkit-appearance: none;
+    background: none;
+    color: white;
+    border: none;
+    min-width: 20px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    border-radius: 0;
+    border-bottom-style: dashed;
+    cursor: pointer;
+    outline: none;
+    transition: color 0.5s;
+}
+
+.ui-updated-indicator {
+    color: green;
+}
