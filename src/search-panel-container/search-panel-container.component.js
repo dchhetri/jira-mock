@@ -12,7 +12,6 @@
 
         bugOperations.getAllBugs().then((bugs) => {
             $ctrl.bugList = bugs;
-            $ctrl.bugList.length = 5;
         });
 
         $ctrl.toggleAdvanceFiltering = () => {
