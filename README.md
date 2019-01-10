@@ -1,5 +1,3 @@
-Just a sample jira mock application
+Playing around with some angularjs. Quick and Dirty mock jira app.
+https://dchhetri.github.io/jira-mock/
 
-Demo: https://dchhetri.github.io/jira-mock/
-
-Note: Developed for chrome. To test, please use the latest chrome.
